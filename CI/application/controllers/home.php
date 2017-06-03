@@ -31,5 +31,11 @@ class Home extends CI_CONTROLLER
 	
 	}
 	
+	public function edit()
+	{
+		$this->load->view('editmembers');
+	
+	}
+	
 	
 }

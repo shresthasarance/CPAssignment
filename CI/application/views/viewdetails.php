@@ -3,13 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <HTML>
 	<HEAD>
+			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/view.css">
+
 		<TITLE>STUDENTS DETAILS</TITLE>
 	</HEAD>
 
 <BODY>
-	<form action="<?php echo base_url();?>User/details" method="post">
+	<form action="<?php echo base_url();?>User/details" class="details" method="post">
 	
-		
 	<table border="1">
 		<thead>
 			<th>First Name</th>
@@ -26,7 +27,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Occupation</th>
 			<th>Temorary Guardian</th>
 			<th>Mobile Number</th>
-				<th>Temporary Address</th>
+			<th>Temporary Address</th>
+			<th>Action</th>
 			<th>Action</th>
 		</thead>
 		
@@ -52,7 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->TemporaryGuardian?></td>
 				<td><?= $article->Mobile_Number?></td>
 				<td><?= $article->Temp_Address?></td>
-				<td><?php echo anchor("User/editdetails", 'Edit');?>
+				<td><a href="<?php echo site_url();?>user/edtiDetails?stdid=<?php echo $article->StudentID;?>">Edit</a></td>
+				<td><a onclick="return confirm('Do you want to delete?')" href="<?php echo base_url();?>user/deleteMember?id=<?php echo $article->StudentID; ?>">Delete</a></td>
 				</td>
 			
 				

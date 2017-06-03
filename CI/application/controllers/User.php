@@ -111,4 +111,57 @@ class User extends CI_CONTROLLER
 		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
 	}
 	
+	public function editDetails(){
+	
+	$this->load->model("UserModel");
+	$id=$this->input->get('stdid');
+	$this->UserModel->selectMemberById($id);
+
+	$result=$this->UserModel->selectMemberById($id);
+	$data['records']=$result;
+	$this->load->view('home/edit',$data);
+	}
+	
+	public function updateEditMember()
+	{
+		$id=$this->input->post('id');
+		$fname=$this->input->post('fname');
+		$mname=$this->input->post('mname');
+		$lname=$this->input->post('lname');
+		$date=$this->input->post('date');
+		$phnum=$this->input->post('mobile');
+		$email=$this->input->post('email');
+		$peraddress=$this->input->post('peradd');
+		$tempaddress=$this->input->post('tempadd');
+		$joiningdate=$this->input->post('joindate');
+		$fathername=$this->input->post('fathername');
+		$mobilenum=$this->input->post('mobnum');
+		$address=$this->input->post('address');
+		$occupation=$this->input->post('occupation');
+		$lguardian=$this->input->post('localname');
+		$addr=$this->input->post('add');
+		$mobnumber=$this->input->post('mobnumber');
+
+	$this->load->model('UserModel');
+	$this->UserModel->updateMember
+	($id, $fname , $mname,  $lname,  $date,  $phnum,  $email,  $peraddress,  $tempaddress,  
+	$joiningdate,  $fathername,  $mobilenum,  $address,	 $occupation,  $lguardian,  $addr, 
+	$mobnumber);
+	
+	echo "updated successfully";
+	//$data['update_message']="data successfully update";
+	//$this->load->view('admin/adminPage',$data);
+
+	}
+	
+	public function deleteMember()
+	{
+		$this->load->model("UserModel");
+		$id=$this->input->get('id');
+		$this->UserModel->removeMember($id);
+		
+		//$data['delete_message']="data successfully delete";
+		//$this->load->view('Home/viewdetails'), $data);
+	}
+	
 }

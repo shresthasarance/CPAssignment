@@ -8,31 +8,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
   	<meta charset="utf-8">
-	<!--javascript-->
-	<SCRIPT>
-		function checkpwd(){
-		var password=document.form1.password.value;
-		var cpassword=document.form1.cpassword.value;
-		
-		if(password===cpassword){
-		
-			document.getElementById('message').innerHTML="password match";
-		}else{
-		
-			document.getElementById('message').innerHTML="password doesn't match";
-		}
-		
-		}
-	</SCRIPT>
 	
-  <TITLE>Registration Form</TITLE>
-	<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
-	<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
-    <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/style1.css">
-
+  <TITLE>Update Form</TITLE>
+  
  
 </HEAD>
+<?php
+if($records->num_rows()>0){
+	foreach($records->result() as $row){
+?>
 <BODY>
 	<div class="wrap">
 	
@@ -58,16 +42,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	
   <h1 class="register-title">Welcome</h1>
-  <form name="form1" class="register" action="<?php echo base_url();?>User/register/" method="post">
+  <form name="form1" class="register" action="<?php echo base_url();?>User/updateEditMember/" method="post">
   
 	<table>
 	<fieldset>
 	<legend> Student's Details </legend>
 	
 	<tr>
-		<td><input type="text" name="fname" class="register-input" placeholder="First Name" required="required"></td>
-		<td><input type="text" name="mname" class="register-input" placeholder="Middle Name"></td>
-		<td><input type="text" name="lname" class="register-input" placeholder="Last Name" required="required"></td>
+		<input type="hidden" name="id" class="form-control" id="id" required="required" value="<?php echo $row->StudentID; ?>">
+
+	</tr>
+	
+	<tr>
+		<td><input type="text" name="fname" class="register-input" placeholder="First Name" required="required" value="<?php echo $row->FirstName; ?>"></td>
+		<td><input type="text" name="mname" class="register-input" placeholder="Middle Name" value="<?php echo $row->MiddleName; ?>"></td>
+		<td><input type="text" name="lname" class="register-input" placeholder="Last Name" required="required" value="<?php echo $row->LastName; ?>"></td>
 	</tr>
 	
 	<tr>
@@ -128,11 +117,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</fieldset>
 	
 	<tr>
-    <td><input type="submit" value="Register" class="register-button" </td><br>
+    <td><input type="submit" value="Update" class="register-button" </td><br>
 	</tr>
 	
 	</table>
   </form>
+  <?php
+  }
+  }
+  ?>
 
  
 </BODY>
