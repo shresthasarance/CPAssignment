@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</HEAD>
 
 <BODY>
-	<form action="<?php echo base_url();?>User/details" class="details" method="post">
+	<form action="<?php echo base_url();?>User/updateDetails" class="details" method="post">
 	
 	<table border="1">
 		<thead>
@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Temorary Guardian</th>
 			<th>Mobile Number</th>
 			<th>Temporary Address</th>
+			<th>Action</th>
 			
 		</thead>
 		
@@ -41,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->FirstName?></td>
 				<td><?= $article->MiddleName?></td>
 				<td><?= $article->LastName?></td>
-				<td><?= $article->DOB?></td><br>
+				<td><?= $article->DOB?></td>
 				<td><?= $article->PhoneNumber?></td>
 				<td><?= $article->Email?></td>
 				<td><?= $article->PermanentAddress?></td>
@@ -53,6 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->TemporaryGuardian?></td>
 				<td><?= $article->Mobile_Number?></td>
 				<td><?= $article->Temp_Address?></td>
+				<td><a href="<?php echo base_url();?>User/editDetails?stdid=<?php echo $article->StudentID;?>">Edit</a></td>
+
+				<td><?= anchor ("User/editDetails/{$article->StudentID}","Edit", ['class'=>'btn btn-primary']);?>
 				</td>
 			
 				

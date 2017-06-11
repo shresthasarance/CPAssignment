@@ -22,7 +22,9 @@ class Home extends CI_CONTROLLER
 	
 	public function dashboard()
 	{
+		
 		$this->load->view('dashboard');
+		
 	}
 	
 	public function viewdetails()
@@ -31,11 +33,52 @@ class Home extends CI_CONTROLLER
 	
 	}
 	
+	public function updateDetails()
+	{
+		$this->load->view('listUpdateDetails');
+	
+	}
+	
+	public function deleteDetails()
+	{
+		$this->load->view('listDeleteDetails');
+	
+	}
+	
 	public function edit()
 	{
 		$this->load->view('editmembers');
 	
 	}
+	
+	public function contact()
+	{
+		$this->load->view('contactus');
+	
+	}
+	
+	public function service()
+	{
+		$this->load->view('services');
+	
+	}
+	
+	public function booking()
+	{
+		$this->load->view('booking');
+	
+	}
+	public function admin()
+	{
+		$this->load->view('adminpage');
+	
+	}
+	public function hello()
+	{
+		$username=$this->input->post('username');
+		echo 'Hello'. $username;
+	}
+
 	
 	
 }

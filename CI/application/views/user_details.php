@@ -15,16 +15,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			document.getElementById('message').innerHTML="password match";
 		}else{
 		
-			document.getElementById('message').innerHTML="password doesn't match";
+			document.getElementById('message').innerHTML="password doesn't match! Try again";
 		}
 		
+		}
+		function FrmVal(){
+			var eml = document.form1.email.value;		
+			var email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+			if(eml.match(email)){
+				document.getElementById('msg').innerHTML = "valid email";
+				return true;
+			}else{
+				document.getElementById('msg').innerHTML = "Invalid Email";			
+			}
+		}
+			function FrmVal1(){
+			var phone = document.form1.mobile.value;
+			var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+			
+			if(phone.match(phoneNum)){
+				document.getElementById('msz').innerHTML = "valid number";
+				return true;
+			}else{
+				document.getElementById('msz').innerHTML = "Invalid Phone Number";
+			}
+		}
+	
+		function name(){
+		var fname=document.form1.fname.value;
+			if(fname==''){
+			document.getElementById('errorBox').innerHTMl="enter first name";
+			return false;
+			}
+		}
+		
+		function address(){
+			var add=document.form1.peradd;
+			var letters = /^[0-9a-zA-Z]+$/; 
+			if(add.value.match(letters)))
+			{
+				return true;
+			}else{
+				alert('user address must have alpahnumeric characters only');
+				add.focus();
+			}
+			
 		}
 	</SCRIPT>
 		<TITLE> STUDENT DETAILS </TITLE>
 		
 	</HEAD>
 
-		<BODY>
+		<BODY onload="document.form1.fname.focus();">
 		
 			<form name="form1" action="<?php echo base_url();?>User/register/" method="post">
 			<center>
@@ -34,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<table>
 				<tr>
 					<td><label>FIRST NAME:</label><br><br></td>
-					<td><input type="text" name="fname" required="required"/><br><br></td>
+					<td><input type="text" name="fname" required="required" onchange="name();"/><br><br></td>
+					<td><div id="errorBox"></div></td>
 					
 					<td><label>MIDDLE NAME:</label><br><br></td>
 					<td><input type="text" name="mname" /><br><br></td>
@@ -54,18 +98,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					
 					<td><label>CONFIRM PASSWORD:</label><br><br></td>
 					<td><input type="password" name="cpassword" maxlength="20" required="required"  onchange="checkpwd();" /><br><br></td>
-					<span id="message"></span>
+					<td><span id="message"></span></td>
 				</tr>
 		
 				<tr>
 					<td><label>DOB:</label><br><br></td>
+				</tr>
+				<tr>
 					<td><input type="date" name="date" > <br><br></td>
 					
 				</tr>
 				
 				<tr>
 					<td><label>PERMANENT ADDRESS :</label><br><br></td>
-					<td><input type="text" name="peradd" required="required"  /><br><br></td>
+					<td><input type="text" name="peradd" required="required" onChange="address();"  /><br><br></td>
 					
 					<td><label>TEMPORARY ADDRESS :</label><br><br></td>
 					<td><input type="text" name="tempadd" required="required"  /><br><br></td>
@@ -75,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<tr>
 					<td><label>MOBILE NUMBER.:</label><br><br></td>
 					<td><input type="text" name="mobile" placeholder="number" required="required" onkeypress="FrmVal1();" /><br><br></td>
-					<td><span id="msz"></span></td>
+					<td><span id="msz"></span><td>
 			
 				</tr>
 				

@@ -11,21 +11,6 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
-  <!-- 
-	//////////////////////////////////////////////////////
-
-
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<!-- Google Webfonts -->
@@ -43,10 +28,10 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/magnific-popup.css">
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
-		<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
-		<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
-		<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
-		<script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
+	<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
+	<script src="<?php echo base_url();?>assets/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -63,13 +48,10 @@
 			<li><a href="#"><span class="iconic plus-alt"></span> About</a>
 				
 			</li>
-			<li><a href="#"><span class="iconic magnifying-glass"></span> Services</a>
+			<li><a href="<?php echo site_url('Home/service')?>"><span class="iconic magnifying-glass"></span> Services</a>
 			
 			</li>
-			<li><a href="#"><span class="iconic map-pin"></span> Products</a>
-			
-			</li>
-			<li><a href="#" <span class="iconic mail"></span> Contact Us</a>
+			<li><a href="<?php echo site_url('Home/contact')?>" <span class="iconic mail"></span> Contact Us</a>
 				
 			</li>
 			<li><a href="<?php echo site_url('Home/login')?>"><span class="iconic mail"></span> Login</a></li>
@@ -79,7 +61,7 @@
 	</div>
 		
 	
-		<header role="banner" id="fh5co-header" style="background-image: url(images/hero-4.jpg);" data-stellar-background-ratio="0.5">
+		<header role="banner" id="fh5co-header" style="background-image: url(<?php echo base_url();?>assets/images/hero-2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="fh5co-intro-wrap">
@@ -87,7 +69,7 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2 text-center">
 								<h1 class="fh5co-intro-lead animate-1 to-animate">BLUE BIRD BOY'S HOSTEL</h1>
-								<h2 class="fh5co-intro-sub animate-2 to-animate">A Complete Caring Hostel At Their Best Services As Alike Home</a></h2>
+								<h2 class="fh5co-intro-sub animate-2 to-animate"><marquee>A Complete Caring Hostel At Their Best Services As Alike Home</marquee></a></h2>
 								<p class="fh5co-social text-center" id="fh5co-intro-social">
 									<a href="https://www.facebook.com" class="to-animate"><i class="icon-facebook-with-circle"></i></a>
 									<a href="https://www.twitter.com" class="to-animate"><i class="icon-twitter-with-circle"></i></a>
@@ -102,81 +84,47 @@
 		</header>
 		
 		
-		<main role="main" id="fh5co-main">
-			<div class="container" id="bio-animate">
+		<div class="container" id="projects-animate">
 				<div class="row row-padded">
 					<div class="col-md-3">
-						<h2 class="fh5co-section-heading to-animate">Biography<span class="fh5co-border"></span></h2>
-					</div>
-					<div class="col-md-8 col-md-push-1">
-						<div class="row">
-							<div class="col-md-6 to-animate">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed doloremque nesciunt nulla rerum. Ut ipsum tempora magni exercitationem officiis maxime in totam cupiditate doloribus repellat dolorem modi aperiam vitae quia sit asperiores saepe labore eligendi quisquam a eaque incidunt.</p>
-
-								<p>Accusamus in odio nostrum provident assumenda magni asperiores quia dolorem sint nulla incidunt distinctio nesciunt maiores. Ex modi est soluta consequatur. Sequi cumque tempora blanditiis repellat quisquam at a dolorum molestias itaque eaque! Dolor doloremque expedita voluptas blanditiis modi.</p>
-							</div>
-							<div class="col-md-6 to-animate">
-								<p>Right molestiae similique enim aliquam deleniti necessitatibus commodi ut blanditiis facere dolore in praesentium? Cupiditate tempore impedit nostrum eveniet deserunt natus dolor recusandae pariatur eligendi unde molestiae autem veniam voluptatem porro quaerat. </p>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolor pariatur quidem ab eos saepe suscipit ducimus vitae blanditiis vero qui quam ipsa possimus alias dolore culpa placeat nesciunt quas!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END .row -->
-			</div>
-			<!-- END .container -->
-			
-			
-			<div class="container" id="projects-animate">
-				<div class="row row-padded">
-					<div class="col-md-3">
-						<h2 class="fh5co-section-heading to-animate">Projects<span class="fh5co-border"></span></h2>
-						<p class="to-animate">Libero velit fugit blanditiis tempora repellat iste inventore amet quaerat ex aliquid sint labore placeat esse.</p>
+						<h2 class="fh5co-section-heading to-animate">Facilities<span class="fh5co-border"></span></h2>
+						<p class="to-animate">Customer's are highly applicable of getting the facilites concerning on their needs of choosing the rooms. They can choose which  
+						room they find appropriate. </p>
+						
 					</div>
 					<div class="col-md-8 col-md-push-1">
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
 								<a href="images/work_1.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 1</div>
+								
+								
 									<div class="fh5co-overlay"></div>
-									<img src="images/work_1.jpg" alt="Free HTML5 Template" class="img-responsive">
+									<img src="<?php echo base_url();?>assets/images/twobed.jpg" alt="Two bed" class="img-responsive">
 								</a>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
 								<a href="images/work_2.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 2</div>
+									
 									<div class="fh5co-overlay"></div>
-									<img src="images/work_2.jpg" alt="Free HTML5 Template" class="img-responsive">
+									<img src="<?php echo base_url();?>assets/images/fourbed.jpg" height="500" alt="Four bed" class="img-responsive">
 								</a>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
 								<a href="images/work_3.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 3</div>
+							
 									<div class="fh5co-overlay"></div>
-									<img src="images/work_3.jpg" alt="Free HTML5 Template" class="img-responsive">
+									<img src="<?php echo base_url();?>assets/images/singlebed.jpg" alt="single bed" class="img-responsive">
 								</a>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
 								<a href="images/work_4.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 4</div>
+								
 									<div class="fh5co-overlay"></div>
-									<img src="images/work_4.jpg" alt="Free HTML5 Template" class="img-responsive">
+									<img src="<?php echo base_url();?>assets/images/cupboard1.jpg" height="400" alt="Free HTML5 Template" class="img-responsive">
 								</a>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
-								<a href="images/work_5.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 5</div>
-									<div class="fh5co-overlay"></div>
-									<img src="images/work_5.jpg" alt="Free HTML5 Template" class="img-responsive">
-								</a>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 fh5co-project to-animate">
-								<a href="images/work_6.jpg" class="image-popup">
-									<div class="fh5co-overlay-text">Project no. 6</div>
-									<div class="fh5co-overlay"></div>
-									<img src="images/work_6.jpg" alt="Free HTML5 Template" class="img-responsive">
-								</a>
-							</div>
+							</div>	
+						
+						
 							
 						</div>
 					</div>
@@ -184,6 +132,9 @@
 				<!-- END .row -->
 			</div>
 			<!-- END .container -->
+
+		
+		
 
 			<div class="fh5co-section-seperator" id="testimony-animate" style="background-image: url(images/hero-3.jpg);" data-stellar-background-ratio="0.5">
 				<div class="fh5co-overlay"></div>
@@ -193,7 +144,7 @@
 							<div class="row">
 								<div class="col-md-9 col-md-offset-1 fh5co-testimony to-animate">
 									<blockquote>
-										<p class="text-center quote">&ldquo;Design is not just what it looks like and feels like. Design is how it <em>works</em>. &rdquo; <cite class="author">&mdash; Steve Jobs</cite></p>
+										<p class="text-center quote">&ldquo;Hostel is not just what it looks like. Hostel is how it assures the environment as like <em>home</em>. &rdquo; <cite class="author"></cite></p>
 									</blockquote>
 								</div>
 							</div>
@@ -205,7 +156,8 @@
 
 <div class="mapwrapper">
     <div id="map" class="container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7067.246204139123!2d85.4148698152158!3d27.66713032552375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1aa16d09a7c3%3A0xcec38ed29a51cc4c!2sParadise+Food+Land!5e0!3m2!1sen!2seg!4v1492970861086"   class="googlemap"></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3532.688063645762!2d85.33975994472151!3d27.696034434071823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m5!1s0x0%3A0x3f99136aae8ed76!2sHUNGRY+MOUTH+FAST+FOOD+CAFE!3m2!1d27.696179299999997!2d85.3408498!4m3!3m2!1d27.695875899999997!2d85.34289129999999!5e0!3m2!1sen!2sus!4v1497009180544" 
+	class="googlemap"></iframe>
     </div> 
 </div>
 
@@ -271,8 +223,8 @@
 			<div class="container" id="footer-animate">
 				<div class="row row-padded">
 					<div class="col-md-8 col-md-push-4">
-						<p class="to-animate">&copy; 2017 COMPUTING PROJECT. All Rights Reserved. Designed: Sarance Shrestha</p>
-						<p class="to-animate">Images: <a href="http://unsplash.com" target="_blank">Unsplash</a> &amp; <a href="http://plmd.me" target="_blank">plmd.me</a></p>
+						<p class="to-animate">&copy; 2017 COMPUTING PROJECT. All Rights Reserved.<br>
+						Designed: Sarance Shrestha</p>
 					</div>
 				</div>
 			</div>

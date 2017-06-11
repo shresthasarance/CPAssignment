@@ -57,10 +57,10 @@ class User extends CI_CONTROLLER
 	public function login()
 	{
 		$this->load->library('form_validation'); //validating
-		
+	
 		
 		$this->form_validation->set_rules('username', 'Username', 'required|alpha|trim');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|alpha');
 		
 		$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
 		
@@ -74,32 +74,38 @@ class User extends CI_CONTROLLER
 			$login_id=$this->UserModel->valid_login($username, $password);
 			IF($login_id){
 				
-				$this->session->set_userdata('StudentID', $login_id);
+				$this->load->library('session');
+				$this->session->set_userdata('studentId' , $login_id );
+				
 				return redirect('Home/dashboard');
 				
 				//++echo 'password match';
 			}else{
 			
 				return redirect('Home/login');
+				
 			}
 
 		}else {
-		
+			header('Location: password didnot match'); 
 			$this->load->view('login');
 		}
 		
 	}
 	
 	public function dashboard()
-	{
-			if(!$this->session->userdata('StudentID') )
-			return redirect('Home/login');
+	{	
+		if(!$this->session->userdata('studentId') )
+		
+		$this->load->view('Login');
+		
 	}
 	
 	public function logout()
 	{
-		$this->session->unset_userdata('StudentID');
-		return redirect ('Home/login');
+		$this->session->unset_userdata('studentId');
+	
+		$this->load->view('login');
 	}
 	
 	public function details()
@@ -107,6 +113,14 @@ class User extends CI_CONTROLLER
 		$this->load->model('UserModel');
 		$data['records']=$this->UserModel->view_details();
 		$this->load->view('viewdetails', $data);
+		//$detailmodel=$this->UserModel->view_details();
+		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
+	}
+	public function updateDetails()
+	{
+		$this->load->model('UserModel');
+		$data['records']=$this->UserModel->update_details();
+		$this->load->view('listUpdateDetails', $data);
 		//$detailmodel=$this->UserModel->view_details();
 		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
 	}
@@ -119,7 +133,7 @@ class User extends CI_CONTROLLER
 
 	$result=$this->UserModel->selectMemberById($id);
 	$data['records']=$result;
-	$this->load->view('home/edit',$data);
+	$this->load->view('editmembers',$data);
 	}
 	
 	public function updateEditMember()
@@ -128,13 +142,10 @@ class User extends CI_CONTROLLER
 		$fname=$this->input->post('fname');
 		$mname=$this->input->post('mname');
 		$lname=$this->input->post('lname');
-		$date=$this->input->post('date');
 		$phnum=$this->input->post('mobile');
 		$email=$this->input->post('email');
 		$peraddress=$this->input->post('peradd');
 		$tempaddress=$this->input->post('tempadd');
-		$joiningdate=$this->input->post('joindate');
-		$fathername=$this->input->post('fathername');
 		$mobilenum=$this->input->post('mobnum');
 		$address=$this->input->post('address');
 		$occupation=$this->input->post('occupation');
@@ -144,14 +155,23 @@ class User extends CI_CONTROLLER
 
 	$this->load->model('UserModel');
 	$this->UserModel->updateMember
-	($id, $fname , $mname,  $lname,  $date,  $phnum,  $email,  $peraddress,  $tempaddress,  
-	$joiningdate,  $fathername,  $mobilenum,  $address,	 $occupation,  $lguardian,  $addr, 
+	($id, $fname , $mname,  $lname,  $phnum,  $email,  $peraddress,  $tempaddress,  
+	$mobilenum,  $address,	 $occupation,  $lguardian,  $addr, 
 	$mobnumber);
 	
-	echo "updated successfully";
-	//$data['update_message']="data successfully update";
-	//$this->load->view('admin/adminPage',$data);
+	//echo "updated successfully";
+	$data['update_message']="data successfully update";
+	//$this->load->view('editmembers',$data);
 
+	}
+	
+	public function deleteDetails()
+	{
+		$this->load->model('UserModel');
+		$data['records']=$this->UserModel->delete_details();
+		$this->load->view('listDeleteDetails', $data);
+		//$detailmodel=$this->UserModel->view_details();
+		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
 	}
 	
 	public function deleteMember()
@@ -161,7 +181,7 @@ class User extends CI_CONTROLLER
 		$this->UserModel->removeMember($id);
 		
 		//$data['delete_message']="data successfully delete";
-		//$this->load->view('Home/viewdetails'), $data);
+		//$this->load->view('listDeleteDetails', $data);
 	}
 	
 }

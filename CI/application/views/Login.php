@@ -7,9 +7,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <title> Login Form </title>
 
 <link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
-<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
+<script type="text/javascript"  src="<?php echo base_url();?>assets/js/jquerymin.js"></script>
 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/style1.css">
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnHello').click(function(){
+			var username=$('#username').val();
+			$.ajax({
+				type:'POST',
+				data:(username:username),
+				url:'<?php echo site_url('Home/hello');?>',
+				success:function(result){
+					$('#result1').html(result);
+				}
+		});
+	});
+	});
+	
+</script>
 
 </head>
 <body>
@@ -23,11 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</li>
 			<li><a href="#"><span class="iconic magnifying-glass"></span> Services</a>
 			
-			</li>
-			<li><a href="#"><span class="iconic map-pin"></span> Products</a>
 			
 			</li>
-			<li><a href="#" <span class="iconic mail"></span> Contact Us</a>
+			<li><a href="<?php echo site_url('Home/contact')?>" <span class="iconic mail"></span> Contact Us</a>
 				
 			</li>
 			<li><a href="#"><span class="iconic mail"></span> Login</a></li>
@@ -37,18 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<div class="container">
 	<section id="content">
-		<form class="login" action="<?php echo base_url();?>User/login" method="post">
+		<form class="login" id="frm_login"  action="<?php echo base_url();?>User/login" method="post">
 			<h1 class="login-title">Login</h1>
 			<center>
 			
 			<div>
-				<input type="text" name="username" placeholder="Username" class="login-input" required="required"  /><br><br>
+				<input type="text" id="username" name="username" placeholder="Username" class="login-input" required="required"  /><br><br>
 			</div>
 			<div>
-				<input type="password" name="password" placeholder="Password" class="login-input" required="required"  /><br><br>
+				<input type="password"  name="password" placeholder="Password" class="login-input" required="required"  /><br><br>
 			</div>
 			<div>
-				<input type="submit" name="login" class="login-button" value="Log in" />
+				<input type="submit" name="login"  id="btnHello" class="login-button" value="Log in" />
+				<span id="result1"></span>
 				<input type="checkbox" name="remember">Remember me
 				<a href="<?php echo site_url('Home/register')?>">New user?Register Now</a><br> 
 				
@@ -58,3 +74,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div><!-- container -->
 		</center>
 	</form>
+	
+		<!-- jQuery -->
+		<script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="<?php echo base_url();?>assets/js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="<?php echo base_url();?>assets/js/jquery.waypoints.min.js"></script>
+		<!-- Stellar -->
+		<script src="<?php echo base_url();?>assets/js/jquery.stellar.min.js"></script>
+		<!-- countTo -->
+		<script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
+		<!-- Magnific Popup -->
+		<script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
+		<!-- Main JS -->
+		<script src="<?php echo base_url();?>assets/js/main.js"></script>
+</Body>
+</Html>

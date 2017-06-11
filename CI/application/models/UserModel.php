@@ -40,8 +40,11 @@
 									->get('users_details');
 			
 			if($query->num_rows() >=1 ) {
-			
-				return true;
+				
+				//$row=$query->row();
+				//return row()->StudentID;
+				return $query->row()->StudentID; 
+				//return true;
 			}else{
 			
 				return false;
@@ -64,24 +67,27 @@
 			$result=$this->db->get("users_details");
 			return $result;
 		}
+				
+		public function update_details()
+		{
+			//$customer_id=$this->session->userdata('StudentID');
+			$query=$this->db->get('users_details');
+			return $query->result();
+		}
 		
+	
 		public function updateMember
-		
-		($studentId, $fname , $mname,  $lname,  $date,  $phnum,  $email,  $peraddress,  $tempaddress,  
-		 $joiningdate,  $fathername,  $mobilenum,  $address,
-		 $occupation,  $lguardian,  $addr, $mobnumber){
+		($id, $fname , $mname,  $lname,  $phnum,  $email,  $peraddress,  $tempaddress,  
+		 $mobilenum,  $address, $occupation,  $lguardian,  $addr, $mobnumber){
 		$array=array(
 			"StudentID"=>$id,
 			"FirstName"=>$fname, 
 			"MiddleName"=>$mname, 
 			"LastName"=>$lname, 
-			"DOB"=>$date, 
 			"PhoneNumber"=>$phnum, 
 			"Email"=>$email, 
 			"PermanentAddress"=>$peraddress, 
 			"TemporaryAddress"=>$tempaddress, 
-			"JoiningDate"=>$joiningdate, 
-			"FatherName"=>$fathername, 
 			"MobileNumber"=>$mobilenum, 
 			"TemporaryGuardian"=>$lguardian, 
 			"Mobile_Number"=>$mobnumber, 
@@ -93,6 +99,15 @@
 			
 		$this->db->where("StudentID",$id);
 		$this->db->update("users_details",$array);
+		return "data updated";
+		}
+		
+			
+		public function delete_details()
+		{
+			//$customer_id=$this->session->userdata('StudentID');
+			$query=$this->db->get('users_details');
+			return $query->result();
 		}
 		
 		public function removeMember($id)

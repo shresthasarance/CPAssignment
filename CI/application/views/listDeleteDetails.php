@@ -9,9 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</HEAD>
 
 <BODY>
-	<form action="<?php echo base_url();?>User/details" class="details" method="post">
+	<form action="<?php echo base_url();?>User/deleteDetails" class="details" method="post">
 	
-	<table border="1">
+	<table border="4">
 		<thead>
 			<th>First Name</th>
 			<th>Middle Name</th>
@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Temorary Guardian</th>
 			<th>Mobile Number</th>
 			<th>Temporary Address</th>
+			<th>Action</th>
 			
 		</thead>
 		
@@ -41,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->FirstName?></td>
 				<td><?= $article->MiddleName?></td>
 				<td><?= $article->LastName?></td>
-				<td><?= $article->DOB?></td><br>
+				<td><?= $article->DOB?></td>
 				<td><?= $article->PhoneNumber?></td>
 				<td><?= $article->Email?></td>
 				<td><?= $article->PermanentAddress?></td>
@@ -53,6 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->TemporaryGuardian?></td>
 				<td><?= $article->Mobile_Number?></td>
 				<td><?= $article->Temp_Address?></td>
+				<td><a onclick="return confirm('Do you want to delete?')" href="<?php echo base_url();?>user/deleteMember?id=<?php echo $article->StudentID; ?>">Delete</a></td>
 				</td>
 			
 				
