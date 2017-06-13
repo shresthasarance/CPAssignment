@@ -56,7 +56,8 @@
 		
 		public function view_details()
 		{
-			//$customer_id=$this->session->userdata('StudentID');
+			$customer_id=$this->session->userdata('user_id');
+			$this->db->where("StudentID", $customer_id);
 			$query=$this->db->get('users_details');
 			return $query->result();
 		}
@@ -70,7 +71,8 @@
 				
 		public function update_details()
 		{
-			//$customer_id=$this->session->userdata('StudentID');
+			$customer_id=$this->session->userdata('user_id');
+			$this->db->where("StudentID", $customer_id);
 			$query=$this->db->get('users_details');
 			return $query->result();
 		}
@@ -103,18 +105,18 @@
 		}
 		
 			
-		public function delete_details()
-		{
+		//public function delete_details()
+		
 			//$customer_id=$this->session->userdata('StudentID');
-			$query=$this->db->get('users_details');
-			return $query->result();
-		}
+		//	$query=$this->db->get('users_details');
+			//return $query->result();
 		
-		public function removeMember($id)
-		{
-			$this->db->where("StudentID", $id);
-			$this->db->delete("users_details");
 		
-		}
+		//public function removeMember($id)
+		
+		//	$this->db->where("StudentID", $id);
+			//$this->db->delete("users_details");
+		
+	
 	}
 ?>

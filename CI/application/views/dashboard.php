@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 	<table>
 	<tr>
-	<td><a href="#" input type="submit" value="Submit" class="dashboard-button" > Book Room </a> <br><br></td>
+	<td><a href="<?php echo site_url('Booking/getRoomDetails')?>" input type="submit" value="Submit" class="dashboard-button" > Book Room </a> <br><br></td>
 	</tr>
 	
 	<tr>
@@ -32,10 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<tr>
 	<td><a href="<?php echo site_url('User/updateDetails')?>" input type="submit" value="Submit" class="dashboard-button" > Update Details </a> <br><br></td>
 	</tr>
-	
-	<tr>
-	<td><a href="<?php echo site_url('User/deleteDetails')?>" input type="submit" value="Submit" class="dashboard-button" > Delete Details </a> <br><br></td>
-	</tr>
+
 	
 	<tr>
 	<td><a href="<?php echo base_url();?>User/logout" input type="submit" name="logout" class="dashboard-button" value="Logout" > Logout </a><br><br></td>

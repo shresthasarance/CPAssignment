@@ -45,7 +45,7 @@ class User extends CI_CONTROLLER
 		$addr=$this->input->post('add');
 		$mobnumber=$this->input->post('mobnumber');
 		$username=$this->input->post('username');
-		$password=$this->input->post('password');
+		$password=md5($this->input->post('password'));
 
 		$this->load->model('UserModel');
 		$data['modelmsg']=$this->UserModel->getRegister( $fname , $mname,  $lname,  $date,  $phnum,  $email,  $peraddress,  $tempaddress,  
@@ -56,54 +56,63 @@ class User extends CI_CONTROLLER
 	}
 	public function login()
 	{
-		$this->load->library('form_validation'); //validating
+		//$this->load->library('form_validation'); //validating
 	
 		
-		$this->form_validation->set_rules('username', 'Username', 'required|alpha|trim');
-		$this->form_validation->set_rules('password', 'Password', 'required|alpha');
+		//$this->form_validation->set_rules('username', 'Username', 'required|alpha|trim');
+		//$this->form_validation->set_rules('password', 'Password', 'required|alpha');
 		
-		$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
+		//$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
 		
-		if($this->form_validation->run() ){ //if validation passess
+		//if($this->form_validation->run() ){ //if validation passess
 		
 			$username=$this->input->post('username');
-			$password=$this->input->post('password');
+			$password=md5($this->input->post('password'));
 		
 			$this->load->model('UserModel');
 			
 			$login_id=$this->UserModel->valid_login($username, $password);
 			IF($login_id){
+			
+				if($login_id=='10'){
+				
+					$this->load->view('adminpage');
+					
+				}else{
 				
 				$this->load->library('session');
-				$this->session->set_userdata('studentId' , $login_id );
+
 				
-				return redirect('Home/dashboard');
+			//	$sess_data=array(
+				//	'user_id' => $login_id,
+					//'username'=>$username,
+					//'logged_in'=>0
+				//);
+				$this->session->set_userdata('user_id', $login_id);
+				$this->session->set_userdata('username', $username);
+				
+				$this->load->view('dashboard');
 				
 				//++echo 'password match';
-			}else{
 			
-				return redirect('Home/login');
-				
+			}
 			}
 
-		}else {
-			header('Location: password didnot match'); 
-			$this->load->view('login');
-		}
+		
 		
 	}
 	
 	public function dashboard()
 	{	
-		if(!$this->session->userdata('studentId') )
+		if(!$this->session->userdata('user_id') )
 		
-		$this->load->view('Login');
+		return redirect('login');
 		
 	}
 	
 	public function logout()
 	{
-		$this->session->unset_userdata('studentId');
+		$this->session->unset_userdata('user_id');
 	
 		$this->load->view('login');
 	}
@@ -111,7 +120,8 @@ class User extends CI_CONTROLLER
 	public function details()
 	{
 		$this->load->model('UserModel');
-		$data['records']=$this->UserModel->view_details();
+		$studentId=$this->input->post('studentId');
+		$data['records']=$this->UserModel->view_details($studentId);
 		$this->load->view('viewdetails', $data);
 		//$detailmodel=$this->UserModel->view_details();
 		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
@@ -165,23 +175,23 @@ class User extends CI_CONTROLLER
 
 	}
 	
-	public function deleteDetails()
-	{
-		$this->load->model('UserModel');
-		$data['records']=$this->UserModel->delete_details();
-		$this->load->view('listDeleteDetails', $data);
+	//public function deleteDetails()
+	
+		//$this->load->model('UserModel');
+		//$data['records']=$this->UserModel->delete_details();
+		//$this->load->view('listDeleteDetails', $data);
 		//$detailmodel=$this->UserModel->view_details();
 		//$this->load->view('home/viewdetails',['detailmodel'=>$detailmodel]);
-	}
 	
-	public function deleteMember()
-	{
-		$this->load->model("UserModel");
-		$id=$this->input->get('id');
-		$this->UserModel->removeMember($id);
+	
+	//public function deleteMember()
+	//
+		//$this->load->model("UserModel");
+		//$id=$this->input->get('id');
+		//$this->UserModel->removeMember($id);
 		
 		//$data['delete_message']="data successfully delete";
 		//$this->load->view('listDeleteDetails', $data);
-	}
+	//
 	
 }

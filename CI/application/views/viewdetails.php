@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <HTML>
 	<HEAD>
+			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
+
 			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/view.css">
 
 		<TITLE>STUDENTS DETAILS</TITLE>
@@ -62,6 +64,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		//endif;
 		?>
 		</tbody>
+				<a href="<?php echo site_url('Home/dashboard');?>" input type="submit" name="logout" class="btn btn-primary" value="Logout" > Return  </a><br><br>
+
 	</table>
 	</form>
 </BODY>

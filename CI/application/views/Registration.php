@@ -71,6 +71,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           document.getElementById('pwordMessage').innerHTML='';
         }
 		
+		function checkEmail(){
+			var eml = document.form1.email.value;		
+			var email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+			if(eml.match(email)){
+				document.getElementById('errormsg').innerHTML = "valid email";
+				return true;
+			}else{
+				document.getElementById('errormsg').innerHTML = "Invalid Email";			
+			}
+		}
+		
 		function firstName(){
 		var fname=document.form1.fname.value;
 			if(fname==""){
@@ -84,6 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</SCRIPT>
 	
   <TITLE>Registration Form</TITLE>
+  	<link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
 	<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
 	<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
@@ -137,7 +150,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
 	<tr>
-		<td><input type="text" name="date" class="register-input" placeholder="Date Of Birth" required="required"></td>
+		<td><label for="birthdate">Birth Date </label></td>
+		<td><input type="date" name="date" class="register-input" placeholder="Date Of Birth" required="required"></td>
 	</tr>
 	
 	<tr>
@@ -151,18 +165,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</tr>
 	
 	<tr>
-		<td><input type="text" name="email" class="register-input" placeholder="Email" required="required"></td>
+		<td><input type="text" name="email" class="register-input" placeholder="Email" required="required" onChange="checkEmail();"><span id="errormsg"></span></td>
 	</tr>
 	
 	<tr>
+		<td><label for="joiningdate">Joining Date </label></td>
 		<td><input type="date" name="joindate" class="register-input" placeholder="Joining Date" required="required"></td>
 	</tr>
 	</fieldset>
-	</table>
+	</table><br><br>
 	
 	<table>
 	<fieldset>
-	<legend>Guardian's Details</legend>
+	<legend><em>Guardian's Details</em></legend>
 	
 	<tr>
 		<td><input type="text" name="fathername" class="register-input" placeholder="Father's Name" required="required"></td>
@@ -187,8 +202,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</fieldset>
 	
 	<tr>
-    <td><input type="submit" value="Register" class="register-button" onClick="return confirm('Are you sure want to register?')" ></td><br>
-    <td><input type="reset" value="Reset" class="register-button" </td><br>
+    <td><input type="submit" value="Register" class="btn btn-primary" onClick="return confirm('Are you sure want to register?')" ></td><br>
+    <td><input type="reset" value="Reset" class="btn btn-danger" </td><br>
 	</tr>
 	
 	</table>
