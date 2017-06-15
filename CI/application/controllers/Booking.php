@@ -1,13 +1,13 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
 <?PHP
 
 class Booking extends CI_CONTROLLER
 {
 	public function getRoomDetails()
 	{
+		if(!$this->session->userdata('user_id') )
+		
+		$this->load->view('login');
+		
 		$this->load->model('BookingModel');
 		$getMyRoom=$this->BookingModel->getRoom();
 		$this->load->view('booking', ['getRoom'=>$getMyRoom]);
@@ -18,13 +18,13 @@ class Booking extends CI_CONTROLLER
 		$room=$this->input->post('room');
 		$roomid=$this->input->post('roomid');
 		$bookingdate=$this->input->post('date');
+		$admitdate=$this->input->post('admitdate');
 		
 
 		$this->load->model('BookingModel');
-		$data['modelmsg']=$this->BookingModel->getBook( $room , $roomid,  $bookingdate);
+		$data['modelmsg']=$this->BookingModel->getBook( $room , $roomid,  $bookingdate, $admitdate);
 		
-		return redirect('listBookingDetails');
-	
+		return redirect('Home/booking');
 	}
 	
 	public function deleteBooking()
@@ -42,7 +42,7 @@ class Booking extends CI_CONTROLLER
 		$this->load->model("BookingModel");
 		$id=$this->input->get('bookid');
 		$this->BookingModel->cancelBooking($id);
-		
+//return redirect('Home/bookingdetails');
 		//$data['delete_message']="data successfully delete";
 		//$this->load->view('listDeleteDetails', $data);
 	}

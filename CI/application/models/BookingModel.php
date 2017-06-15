@@ -12,7 +12,7 @@ class BookingModel extends CI_Model{
 		}
 	}
 	
-	public function getBook($room , $roomid,  $bookingdate ){
+	public function getBook($room , $roomid,  $bookingdate, $admitdate ){
 		
 		
 			$customer_id=$this->session->userdata('user_id');	
@@ -23,6 +23,7 @@ class BookingModel extends CI_Model{
 			"room_type"=>$room, 
 			"room_id"=>$roomid, 
 			"booking_date"=>$bookingdate, 
+			"admission_date"=>$admitdate, 
 			);
 		 
 			

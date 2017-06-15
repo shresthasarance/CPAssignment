@@ -22,7 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Phone Number</th>
 			<th>Email</th>
 			<th>Permanent Address</th>
-			<th>Joining Date</th>
 			<th>Father Name</th>
 			<th>Mobile Number</th>
 			<th>Permanent Address</th>
@@ -48,7 +47,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->PhoneNumber?></td>
 				<td><?= $article->Email?></td>
 				<td><?= $article->PermanentAddress?></td>
-				<td><?= $article->JoiningDate?></td>
 				<td><?= $article->FatherName?></td>
 				<td><?= $article->MobileNumber?></td>
 				<td><?= $article->Permanent_Address?></td>
@@ -56,9 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->TemporaryGuardian?></td>
 				<td><?= $article->Mobile_Number?></td>
 				<td><?= $article->Temp_Address?></td>
-				<td><a href="<?php echo base_url();?>User/editDetails?stdid=<?php echo $article->StudentID;?>">Edit</a></td>
+				<td><a  class="btn btn-primary" href="<?php echo base_url();?>User/editDetails?stdid=<?php echo $article->StudentID;?>">Edit</a></td>
 
-				<td><?= anchor ("User/editDetails/{$article->StudentID}","Edit", ['class'=>'btn btn-primary']);?>
 				</td>
 			
 				

@@ -15,10 +15,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<table border="4">
 		<thead>
+		
+			<th>Username</th>
+			<th>Customer Id</th>
 			<th>Room Type</th>
 			<th>Room Id</th>
 			<th>Booking Date</th>
-			<th>Username</th>
+			<th>Admission Date</th>
 			<th>Action</th>
 			
 		</thead>
@@ -30,21 +33,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		?>
 			<tr>
 				
+				<td><?= $article->username?></td>
+				<td><?= $article->customer_id?></td>
 				<td><?= $article->room_type?></td>
 				<td><?= $article->room_id?></td>
 				<td><?= $article->booking_date?></td>
-				<td><?= $article->username?></td>
-				<td><a onclick="return confirm('Do you want to delete?')" href="<?php echo base_url();?>Booking/deleteBookingDetails?bookid=<?php echo $article->booking_id; ?>">Delete</a></td>
+				<td><?= $article->admission_date?></td>
+				<td>
+					<a onclick="return confirm('Do you want to delete?')" class="btn btn-danger" href="<?php echo base_url();?>Booking/deleteBookingDetails?bookid=<?php echo $article->booking_id; ?>">
+						Cancel Booking
+					</a>
 				</td>
-			
-				
-			</tr>
+			</tr>	
+
 		<?php
 			endforeach;
 		//endif;
 		?>
 		</tbody>
-			<a href="<?php echo site_url('Home/booking');?>" input type="submit" name="logout" class="btn btn-danger" value="Logout" > Return  </a><br><br>
+	
+		<a href="<?php echo site_url('Booking/getRoomDetails');?>" input type="submit" name="logout" class="btn btn-danger" value="Logout" > Return  </a><br><br>
 
 	</table>
 	</center>

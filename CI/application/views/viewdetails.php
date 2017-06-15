@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
+
 <HTML>
 	<HEAD>
 			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
@@ -14,7 +16,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<form action="<?php echo base_url();?>User/details" class="details" method="post">
 	
 	<table border="1">
+	<?php
+	?>
+	
 		<thead>
+			
 			<th>First Name</th>
 			<th>Middle Name</th>
 			<th>Last Name</th>

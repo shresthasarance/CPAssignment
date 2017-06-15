@@ -5,13 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<HEAD>
 			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
 
-			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/adminview.css">
+			 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/adminviewuser.css">
 
 		<TITLE>STUDENTS DETAILS</TITLE>
 	</HEAD>
 
 <BODY>
-	<form action="<?php echo base_url();?>AdminController/userDetails" class="details" method="post">
+	<form action="<?php echo base_url();?>AdminController/viewDetails" class="details" method="post">
 	
 	<table border="1">
 		<thead>
@@ -22,7 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Phone Number</th>
 			<th>Email</th>
 			<th>Permanent Address</th>
-			<th>Joining Date</th>
 			<th>Father Name</th>
 			<th>Mobile Number</th>
 			<th>Permanent Address</th>
@@ -49,7 +48,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->PhoneNumber?></td>
 				<td><?= $article->Email?></td>
 				<td><?= $article->PermanentAddress?></td>
-				<td><?= $article->JoiningDate?></td>
 				<td><?= $article->FatherName?></td>
 				<td><?= $article->MobileNumber?></td>
 				<td><?= $article->Permanent_Address?></td>
@@ -57,8 +55,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<td><?= $article->TemporaryGuardian?></td>
 				<td><?= $article->Mobile_Number?></td>
 				<td><?= $article->Temp_Address?></td>
-				<td><a onclick="return confirm('Do you want to delete this user information?')" href="<?php echo base_url();?>AdminController/deleteMemberDetails?id=<?php echo $article->StudentID; ?>">Delete</a></td>
-				<td><a href="<?php echo base_url();?>AdminController/editUserDetails?stdid=<?php echo $article->StudentID;?>">Edit</a></td>
+				<td><a onclick="return confirm('Do you want to delete this user information?')" class="btn btn-danger" href="<?php echo base_url();?>AdminController/deleteMemberDetails?id=<?php echo $article->StudentID; ?>">Delete</a></td>
+				<td><a class="btn btn-success" href="<?php echo base_url();?>AdminController/editUserDetails?stdid=<?php echo $article->StudentID;?> ">Edit</a></td>
 				</td>
 			
 				

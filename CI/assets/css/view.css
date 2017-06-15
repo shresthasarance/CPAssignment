@@ -15,8 +15,9 @@ time, mark, audio, video {
   padding: 20;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: normal;
   vertical-align: baseline;
+  color: visible;
 }
 
 article, aside, details, figcaption, figure,
@@ -25,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+	color: crimson;
   line-height: 1;
 }
 
@@ -43,8 +45,14 @@ q:before, q:after {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-collapse:border-bottom;
+  border-spacing: ;
+
+}
+
+tr,td{
+border:black;
+
 }
 
 .about {
@@ -210,3 +218,9 @@ body {
   border: 0;
   padding: 0;
 }
+
+
+tbody td a{
+margin-top: -4px;
+    margin-left: -2px;
+} 	

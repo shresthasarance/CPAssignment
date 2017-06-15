@@ -36,7 +36,6 @@ class User extends CI_CONTROLLER
 		$email=$this->input->post('email');
 		$peraddress=$this->input->post('peradd');
 		$tempaddress=$this->input->post('tempadd');
-		$joiningdate=$this->input->post('joindate');
 		$fathername=$this->input->post('fathername');
 		$mobilenum=$this->input->post('mobnum');
 		$address=$this->input->post('address');
@@ -49,7 +48,7 @@ class User extends CI_CONTROLLER
 
 		$this->load->model('UserModel');
 		$data['modelmsg']=$this->UserModel->getRegister( $fname , $mname,  $lname,  $date,  $phnum,  $email,  $peraddress,  $tempaddress,  
-		$joiningdate,  $fathername,  $mobilenum,  $address,
+		 $fathername,  $mobilenum,  $address,
 		 $occupation,  $lguardian,  $addr, $mobnumber, $username,  $password);
 		
 		$this->load->view('Login');

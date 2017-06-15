@@ -2,7 +2,7 @@
 	
 	class UserModel extends CI_Model{
 	
-		public function getRegister($fname , $mname,  $lname, $date,  $phnum,  $email,  $peraddress, $tempaddress,  $joiningdate,  $fathername,  
+		public function getRegister($fname , $mname,  $lname, $date,  $phnum,  $email,  $peraddress, $tempaddress,  $fathername,  
 		$mobilenum,  $address,  $occupation,  $lguardian,  $addr, $mobnumber,  $username,  $password  )
 		{
 		
@@ -15,8 +15,7 @@
 			"PhoneNumber"=>$phnum, 
 			"Email"=>$email, 
 			"PermanentAddress"=>$peraddress, 
-			"TemporaryAddress"=>$tempaddress, 
-			"JoiningDate"=>$joiningdate, 
+			"TemporaryAddress"=>$tempaddress,  
 			"FatherName"=>$fathername, 
 			"MobileNumber"=>$mobilenum, 
 			"TemporaryGuardian"=>$lguardian, 

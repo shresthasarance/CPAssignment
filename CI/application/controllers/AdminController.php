@@ -13,13 +13,13 @@ class AdminController extends CI_CONTROLLER
 	}
 	public function editUserDetails(){
 	
-	$this->load->model("AdminModel");
-	$id=$this->input->get('stdid');
-	$this->AdminModel->selectUserById($id);
+		$this->load->model("AdminModel");
+		$id=$this->input->get('stdid');
+		$this->AdminModel->selectUserById($id);
 
-	$result=$this->AdminModel->selectUserById($id);
-	$data['records']=$result;
-	$this->load->view('editmembers',$data);
+		$result=$this->AdminModel->selectUserById($id);
+		$data['records']=$result;
+		$this->load->view('AdminEditUser',$data);
 	}
 	
 	public function updateEditMember()
@@ -39,15 +39,15 @@ class AdminController extends CI_CONTROLLER
 		$addr=$this->input->post('add');
 		$mobnumber=$this->input->post('mobnumber');
 
-	$this->load->model('AdminModel');
-	$this->AdminModel->updateUser
-	($id, $fname , $mname,  $lname,  $phnum,  $email,  $peraddress,  $tempaddress,  
-	$mobilenum,  $address,	 $occupation,  $lguardian,  $addr, 
-	$mobnumber);
-	
-	//echo "updated successfully";
-	//$data['update_message']="data successfully update";
-	//$this->load->view('editmembers',$data);
+		$this->load->model('AdminModel');
+		$this->AdminModel->updateUser
+		($id, $fname , $mname,  $lname,  $phnum,  $email,  $peraddress,  $tempaddress,  
+		$mobilenum,  $address,	 $occupation,  $lguardian,  $addr, 
+		$mobnumber);
+		
+		//echo "updated successfully";
+		//$data['update_message']="data successfully update";
+		//$this->load->view('editmembers',$data);
 	}
 	
 	public function deleteMemberDetails()
@@ -58,6 +58,13 @@ class AdminController extends CI_CONTROLLER
 		
 		//$data['delete_message']="data successfully delete";
 		//$this->load->view('listDeleteDetails', $data);
+	}
+	
+	public function getall() {
+		$this->load->model('AdminModel');
+		$data['query']=$this->AdminModel->result_getall();
+		$this->load->view('BookingDetails' ,$data);
+	
 	}
 }
 ?>

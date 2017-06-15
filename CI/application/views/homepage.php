@@ -48,7 +48,7 @@
 			<li><a href="#"><span class="iconic plus-alt"></span> About</a>
 				
 			</li>
-			<li><a href="<?php echo site_url('Home/service')?>"><span class="iconic magnifying-glass"></span> Services</a>
+			<li><a href="<?php echo site_url('#')?>"><span class="iconic magnifying-glass"></span> Services</a>
 			
 			</li>
 			<li><a href="<?php echo site_url('Home/contact')?>" <span class="iconic mail"></span> Contact Us</a>

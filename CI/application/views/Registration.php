@@ -98,7 +98,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <TITLE>Registration Form</TITLE>
   	<link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
 	<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url();?>assets/css/iconic.css" media="screen" rel="stylesheet" type="text/css" />
 	<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
     <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/style1.css">
 
@@ -110,9 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<nav>
 		<ul class="menu">
 			<li><a href="<?php echo site_url('Home/index')?>"><span class="iconic home"></span> Home</a></li>
-			<li><a href="#"><span class="iconic plus-alt"></span> About</a>
-				
-			</li>
+			
 			<li><a href="#"><span class="iconic magnifying-glass"></span> Services</a>
 			
 			
@@ -168,10 +165,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<td><input type="text" name="email" class="register-input" placeholder="Email" required="required" onChange="checkEmail();"><span id="errormsg"></span></td>
 	</tr>
 	
-	<tr>
-		<td><label for="joiningdate">Joining Date </label></td>
-		<td><input type="date" name="joindate" class="register-input" placeholder="Joining Date" required="required"></td>
-	</tr>
 	</fieldset>
 	</table><br><br>
 	
@@ -206,7 +199,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <td><input type="reset" value="Reset" class="btn btn-danger" </td><br>
 	</tr>
 	
+
+	
 	</table>
+	<td>
+		<h1><em> Note: </em></h1>
+		<p> I hereby declare that I am fully satisfied with the terms and condition of the hostel. I agree every rule and regulation of the hostel and would like to get admission.
+		I promise that i will not violet any rules. If found, I accept any action taken by the management. Therefore, I would like to request the hostel management to follow me to 
+		get admission.</p>
+		<td>
   </form>
 
  

@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
+
 <!DOCTYPE html>
 <HTML lang="en">
 <HEAD>
@@ -9,12 +11,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   	<meta charset="utf-8"> 
 	<TITLE> BOOKING </TITLE>
-	
-	
+		    <script src="http://code.jquery.com/jquery-1.6.1.js"></script>
+
+	<script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="<?php echo base_url();?>assets/js/jquery.easing.1.3.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.waypoints.min.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="<?php echo base_url();?>assets/js/jquery.stellar.min.js"></script>
+    <script>
+function myfun(){
+	alert ("success");
+}
+
+    
+    </script>
+
 	<link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
 	<link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
 	<script src="<?php echo base_url();?>assets/prefix-free.js"></script>
     <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/booking.css">
+	
 	
 </HEAD>
 <BODY>
@@ -40,16 +58,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <form name="form1" class="booking" action="<?php echo base_url();?>Booking/userBooking/" method="post">
 	<table>
 		<tr>
-            <td width="150"> 
-				<label for="roomtype" >Room type </label>                        
+            <td width="180">  
+				<label for="room" >Room type </label>                        
              </td> 
                 <td>
-                    <Select  class="booking-input" name="room">
-					<option value="">Select</option>
+                    <Select class="booking-input" name="room">
+					<option value="room">Select</option>
 					<?php if(count($getRoom)):?>
 								
 					<?php foreach($getRoom as $room):?>
-					<option value=<?php echo $room->room_id?> > <?php echo $room->description;?> </option>
+					<option value="<?php echo $room->description;?>" > <?php echo $room->description;?> </option>
 
 										
 					<?php endforeach;?>
@@ -66,13 +84,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td width="150"> 
 				<label for="roomid">Room ID </label>                        
              </td> 
-                <td>
+                <td width="90">
                     <Select  class="booking-input" name="roomid">
-					<option value="">Select</option>
+					<option value="roomid">Select</option>
 					<?php if(count($getRoom)):?>
 								
 					<?php foreach($getRoom as $room):?>
-					<option value=<?php echo $room->room_id?> > <?php echo $room->room_id;?> </option>
+					<option value="<?php echo $room->room_id?>" > <?php echo $room->room_id;?> </option>
 
 										
 					<?php endforeach;?>
@@ -89,18 +107,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td> 
 				<label for="Bookingdate">Booking Date </label>                        
 			</td> 
-                <td>
-                   	<td><input type="date" name="date" class="booking-input" required="required"></td>
+                <td width="">
+                   	<td><input type="date" name="date" class="booking-input" required="required" style="margin-left: -82px;"></td>
 
                 </td>
 				 
         </tr>
-		    <td><input type="submit" value="Book Room" class="btn btn-info" onClick="return confirm('Are you sure want to Book Room?')" ></td><br>
-		    <td><a href="<?php echo site_url('Home/dashboard')?>" input type="submit" value="Back" class="btn btn-danger" onClick="return confirm('Are you sure?')" >Back</a></td><br>
-			<td><a href="<?php echo site_url('Booking/deleteBooking')?>" input type="submit" value="Submit" class="btn btn-primary" > Booking Details </a> <br><br></td>
+
+		<tr>
+			<td> 
+				<label for="AdmissionDate">Admission Date </label>                        
+			</td> 
+                <td width="">
+                   	<td><input type="date" name="admitdate" class="booking-input" required="required" style="margin-left: -82px;"></td>
+
+                </td>
+				 
+        </tr>
+		<tr>
+		    <td><input type="submit" value="Book Room" class="btn btn-success" onClick="return confirm('Are you sure want to book?')" ></td><br>
+		    <td><a href="<?php echo site_url('Home/dashboard')?>" input type="submit" value="Back" class="btn btn-danger" onClick="return confirm('Are you sure, you want to return?')" >Back</a></td><br>
+			<td><a href="<?php echo site_url('Booking/deleteBooking')?>" onclick="myfun();" input type="submit" value="Submit" class="btn btn-primary" > Booking Details </a> <br><br></td>
+		</tr>
 			
 
 		</table>
+		<td>
+		<p>NOTE:</p>
+		<p>
+			Only the Original copy of the application form will be valid while admiting the student.
+		</p>
+		
+		</td>
+			<!-- jQuery -->
+		
 	</form>
 <BODY>
 </HTML>

@@ -72,7 +72,13 @@ class Home extends CI_CONTROLLER
 	{
 		$this->load->view('adminpage');
 	
-	}
+	}	
+	public function bookingdetails()
+	{
+		$this->load->view('listBookingDetails');
+	
+	}	
+	
 	public function hello()
 	{
 		$username=$this->input->post('username');

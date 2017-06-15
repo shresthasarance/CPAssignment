@@ -11,11 +11,11 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 70;
+  margin:-83px 0px 60px 66px;
   padding: 20;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: normal;
   vertical-align: baseline;
 }
 
@@ -26,7 +26,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  
 }
 
 ol, ul {
@@ -46,6 +45,12 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+
+tbody td a{
+margin-top: -4px;
+ margin-left: 1px;
 }
 
 .about {
@@ -112,16 +117,10 @@ body {
   background: #2d4259;
 }
 
-label{
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 40px;
-}
-
-.booking-title {
-  width: 450px;
-  line-height: 43px;
-  margin: 50px auto 20px;
+.dashboard-title {
+  width: 443;
+  line-height: 18px;
+  margin: -70px auto 20px;
   font-size: 19px;
   font-weight: 500;
   color: white;
@@ -139,87 +138,17 @@ label{
 }
 
 
-.booking {
-  margin: 5px auto;
-  width: 438px 	;
-  padding: 20px;
+
+.details {
+  margin: 150px 0px 0px -221px;
+  width: 178%;
+  padding: 17px;
   background: #f4f4f4;
   border-radius: 3px;
+  position: absolute;
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
-
-
-input {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.booking-input {
-  display: block;
-  width: 108%;
-  height: 42px;
-  margin: 4px 10px 0px 6px;
-  font-weight: 500;
-  background: none;
-  border: 0;
-  border-bottom: 2px solid #d8d8d8;
-
-}
-
-
-
-.booking-input:focus {
-  border-color: #1e9ce6;
-  outline: 0;
-}
-
-
-.booking-button {
-  display: block;
-  width: 100%;
-  height: 42px;
-  margin-top: 25px;
-  font-size: 16px;
-  font-weight: bold;
-  color: green;
-  text-align: center;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
-  background: #fcfcfc;
-  padding: 5px;
-  border: 1px solid;
-  border-color: #d8d8d8 #d1d1d1 #c3c3c3;
-  border-radius: 16px;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(top, #fefefe, #eeeeee);
-  background-image: -moz-linear-gradient(top, #fefefe, #eeeeee);
-  background-image: -o-linear-gradient(top, #fefefe, #eeeeee);
-  background-image: linear-gradient(to bottom, #fefefe, #eeeeee);
-  -webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
-}
-
-
-.booking-button:active {
-  background: #eee;
-  border-color: #c3c3c3 #d1d1d1 #d8d8d8;
-  background-image: -webkit-linear-gradient(top, #eeeeee, #fcfcfc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #fcfcfc);
-  background-image: -o-linear-gradient(top, #eeeeee, #fcfcfc);
-  background-image: linear-gradient(to bottom, #eeeeee, #fcfcfc);
-  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
-}
-
-
-.booking-button:focus {
-  outline: 0;
-}
-
 
 .register-switch {
   height: 32px;

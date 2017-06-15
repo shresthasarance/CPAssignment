@@ -49,5 +49,14 @@ class AdminModel extends CI_MODEL
 		
 		}
 		
+		public function result_getall() {
+			$this->db->select('*');
+			$this->db->from('booking');
+			$this->db->join('users_details', 'booking.customer_id=users_details.StudentID', 'left');
+			$query=$this->db->get();
+			return $query->result();
+		
+		}
+		
 }
 ?>

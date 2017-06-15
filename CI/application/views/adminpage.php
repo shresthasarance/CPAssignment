@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<tr>
 
-	<td><a href="<?php echo site_url()?>" input type="submit" value="Submit" class="admin-button" > Booking Details </a> <br><br></td>
+	<td><a href="<?php echo site_url('AdminController/getall')?>" input type="submit" value="Submit" class="admin-button" > Booking Details </a> <br><br></td>
 	</tr>
 	
 	<tr>

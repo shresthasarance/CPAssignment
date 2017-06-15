@@ -6,6 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <title> Login Form </title>
 
+  	<link rel = "stylesheet" href = "<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
+
 <link href="<?php echo base_url();?>assets/css/stylemenu.css" media="screen" rel="stylesheet" type="text/css" />
 <script type="text/javascript"  src="<?php echo base_url();?>assets/js/jquerymin.js"></script>
 <link rel = "stylesheet" href = "<?php echo base_url();?>assets/css/style1.css">
@@ -35,9 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<nav>
 		<ul class="menu">
 			<li><a href="<?php echo site_url('Home/index')?>"><span class="iconic home"></span> Home</a></li>
-			<li><a href="#"><span class="iconic plus-alt"></span> About</a>
-				
-			</li>
+
 			<li><a href="#"><span class="iconic magnifying-glass"></span> Services</a>
 			
 			
@@ -63,10 +63,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="password"  name="password" placeholder="Password" class="login-input" required="required"  /><br><br>
 			</div>
 			<div>
-				<input type="submit" name="login"  id="btnHello" class="login-button" value="Log in" />
+				<td><input type="submit" name="login"  id="btnHello" class="btn btn-primary" value="Log in" style="    margin-left: -83px; width: 90px; padding-left: 17px;"/></td>
 				<span id="result1"></span>
-				<input type="checkbox" name="remember">Remember me
-				<a href="<?php echo site_url('Home/register')?>">New user?Register Now</a><br> 
+				<td><a class="btn btn-success" href="<?php echo site_url('Home/register')?>">New user?Register Now</a><br> </td>
 				
 			</div>
 		</form><!-- form -->
